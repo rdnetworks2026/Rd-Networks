@@ -1,32 +1,59 @@
-// RD Networks — formulário preparado para EmailJS.
-// PASSO 1: crie sua conta no EmailJS e configure Service ID + Template ID.
-// PASSO 2: substitua os três valores abaixo.
 const EMAILJS_PUBLIC_KEY = "ghlxfFM1Lr0pAIpGk";
 const EMAILJS_SERVICE_ID = "service_gyzcb9g";
 const EMAILJS_TEMPLATE_ID = "template_vis868m";
 
-const menu = document.querySelector('.menu');
-const nav = document.querySelector('nav');
-menu.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+// Menu mobile
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("nav");
 
-const form = document.getElementById('quoteForm');
-const statusEl = document.getElementById('formStatus');
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  if (EMAILJS_PUBLIC_KEY.startsWith('COLOQUE_')) {
-    statusEl.textContent = 'O formulário está pronto. Configure o EmailJS seguindo o arquivo PASSO_A_PASSO.txt para ativar o envio automático.';
-    return;
-  }
-  statusEl.textContent = 'Enviando solicitação...';
-  try {
-    if (!window.emailjs) throw new Error('Biblioteca EmailJS não carregada.');
-    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-    await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
-    statusEl.textContent = 'Solicitação enviada com sucesso. A RD Networks entrará em contato após analisar as informações.';
-    form.reset();
-  } catch (err) {
-    console.error(err);
-    statusEl.textContent = 'Não foi possível enviar agora. Tente novamente ou entre em contato diretamente com a RD Networks.';
-  }
-});
+if (menu && nav) {
+  menu.addEventListener("click", () => nav.classList.toggle("open"));
+
+  document.querySelectorAll("nav a").forEach((a) => {
+    a.addEventListener("click", () => nav.classList.remove("open"));
+  });
+}
+
+// Formulário de orçamento
+const form = document.getElementById("quoteForm");
+const statusEl = document.getElementById("formStatus");
+
+if (form) {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    statusEl.textContent = "Enviando solicitação...";
+
+    const dados = {
+      name: form.elements["name"].value,
+      email: form.elements["email"].value,
+      whatsapp: form.elements["whatsapp"].value,
+      city: form.elements["city"].value,
+      service: form.elements["service"].value,
+      quantity: form.elements["quantity"].value,
+      message: form.elements["message"].value
+    };
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        dados,
+        {
+          publicKey: EMAILJS_PUBLIC_KEY
+        }
+      );
+
+      statusEl.textContent =
+        "Solicitação enviada com sucesso! A RD Networks entrará em contato após analisar as informações.";
+
+      form.reset();
+
+    } catch (error) {
+      console.error("Erro EmailJS:", error);
+
+      statusEl.textContent =
+        "Não foi possível enviar agora. Tente novamente ou entre em contato diretamente com a RD Networks.";
+    }
+  });
+}
