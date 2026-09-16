@@ -2,7 +2,7 @@
 // PASSO 1: crie sua conta no EmailJS e configure Service ID + Template ID.
 // PASSO 2: substitua os três valores abaixo.
 const EMAILJS_PUBLIC_KEY = "ghlxfFM1Lr0pAIpGk";
-const EMAILJS_SERVICE_ID = "service_gyzdb9g";
+const EMAILJS_SERVICE_ID = "service_gyzcb9g";
 const EMAILJS_TEMPLATE_ID = "template_vis868m";
 
 const menu = document.querySelector('.menu');
