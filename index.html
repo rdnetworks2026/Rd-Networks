@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RD Networks - Infraestrutura de redes, cabeamento estruturado, racks, CFTV IP e fibra óptica na Grande Vitória." />
+  <title>RD Networks | Infraestrutura que conecta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#inicio"><span>RD</span> NETWORKS</a>
+  <button class="menu" aria-label="Abrir menu">☰</button>
+  <nav>
+    <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#atendimento">Atendimento</a><a class="nav-cta" href="#orcamento">Pedir orçamento</a>
+  </nav>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">GRANDE VITÓRIA • ESPÍRITO SANTO</p>
+    <h1>Infraestrutura de redes com execução profissional.</h1>
+    <p>Cabeamento estruturado, organização de racks, pontos de rede, infraestrutura para CFTV IP e serviços em fibra óptica para pequenos negócios, escritórios e empresas.</p>
+    <div class="actions"><a class="btn primary" href="#orcamento">Solicitar orçamento</a><a class="btn secondary" href="#servicos">Conhecer serviços</a></div>
+  </div>
+  <div class="network-card" aria-hidden="true">
+    <div class="rack"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="line l1"></div><div class="line l2"></div><div class="line l3"></div>
+    <div class="node n1">RJ45</div><div class="node n2">CFTV IP</div><div class="node n3">FIBRA</div>
+  </div>
+</section>
+
+<section id="servicos" class="section">
+  <p class="eyebrow">O QUE FAZEMOS</p><h2>Serviços de infraestrutura</h2>
+  <div class="grid services">
+    <article><b>01</b><h3>Cabeamento estruturado</h3><p>Lançamento de cabos, pontos de rede e terminações para infraestrutura de dados.</p></article>
+    <article><b>02</b><h3>Racks e patch panels</h3><p>Fixação, organização, adequação de racks e conectorização de patch panels.</p></article>
+    <article><b>03</b><h3>RJ45 e tomadas</h3><p>Crimpagem de conectores RJ45, keystones e acabamento dos pontos.</p></article>
+    <article><b>04</b><h3>CFTV IP</h3><p>Infraestrutura física, lançamento de cabos de dados e fixação de câmeras.</p></article>
+    <article><b>05</b><h3>Fibra óptica</h3><p>Lançamento de fibra conforme análise técnica, percurso e condições do local.</p></article>
+    <article><b>06</b><h3>Visita técnica</h3><p>Levantamento básico, análise do local, diagnóstico inicial e orientação.</p></article>
+  </div>
+</section>
+
+<section id="sobre" class="section split">
+  <div><p class="eyebrow">RD NETWORKS</p><h2>Empresa nova, serviço levado a sério.</h2></div>
+  <div><p>A RD Networks atende demandas de infraestrutura de redes com foco em pequenos serviços e atendimento próximo. Trabalhamos com organização, instalação e adequação da infraestrutura física, sempre definindo o escopo antes da execução.</p><p class="muted">Não apresentamos projetos não realizados como portfólio. Cada proposta é preparada conforme a necessidade informada pelo cliente.</p></div>
+</section>
+
+<section id="atendimento" class="section coverage">
+  <div><p class="eyebrow">ÁREA DE ATENDIMENTO</p><h2>Grande Vitória e outras regiões sob consulta.</h2></div>
+  <div class="chips"><span>Vitória</span><span>Vila Velha</span><span>Serra</span><span>Cariacica</span><span>Outras regiões do ES</span></div>
+</section>
+
+<section id="orcamento" class="section quote">
+  <div class="quote-intro"><p class="eyebrow">SOLICITE UMA PROPOSTA</p><h2>Conte o que você precisa.</h2><p>Preencha os dados abaixo. A solicitação pode ser enviada por e-mail após você configurar o serviço de envio conforme o passo a passo incluído no pacote.</p></div>
+  <form id="quoteForm">
+    <div class="two"><label>Nome / empresa<input name="name" required placeholder="Seu nome ou empresa"></label><label>E-mail<input type="email" name="email" required placeholder="voce@empresa.com"></label></div>
+    <div class="two"><label>WhatsApp<input name="phone" placeholder="(27) 99999-9999"></label><label>Cidade<input name="city" placeholder="Vitória / Vila Velha / Serra..."></label></div>
+    <div class="two"><label>Serviço<select name="service" required><option value="">Selecione</option><option>Cabeamento estruturado</option><option>Organização de rack</option><option>Instalação de rack</option><option>Patch panel</option><option>Pontos RJ45 / tomadas</option><option>CFTV IP</option><option>Fibra óptica</option><option>Visita técnica</option><option>Outro</option></select></label><label>Quantidade aproximada<input type="number" min="0" name="quantity" placeholder="Ex.: 12 pontos"></label></div>
+    <label>Descreva a necessidade<textarea name="message" required rows="6" placeholder="Explique o serviço, local, quantidade aproximada, infraestrutura existente e qualquer dificuldade conhecida."></textarea></label>
+    <label class="consent"><input type="checkbox" required> Autorizo o uso destes dados para contato e elaboração da proposta solicitada.</label>
+    <button class="btn primary" type="submit">Enviar solicitação</button>
+    <p id="formStatus" class="status" role="status"></p>
+  </form>
+</section>
+</main>
+<footer><div><strong>RD NETWORKS</strong><span>Infraestrutura que conecta.</span></div><p>© 2026 RD Networks. Todos os direitos reservados.</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body></html>
