@@ -2,40 +2,71 @@ const EMAILJS_PUBLIC_KEY = "ghlxfFM1Lr0pAIpGk";
 const EMAILJS_SERVICE_ID = "service_gyzcb9g";
 const EMAILJS_TEMPLATE_ID = "template_vis868m";
 
-// Menu mobile
+// ==============================
+// MENU MOBILE
+// ==============================
+
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
 
 if (menu && nav) {
-  menu.addEventListener("click", () => nav.classList.toggle("open"));
+  menu.addEventListener("click", function () {
+    nav.classList.toggle("open");
+  });
 
-  document.querySelectorAll("nav a").forEach((a) => {
-    a.addEventListener("click", () => nav.classList.remove("open"));
+  document.querySelectorAll("nav a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      nav.classList.remove("open");
+    });
   });
 }
 
-// Formulário de orçamento
+// ==============================
+// FORMULÁRIO DE ORÇAMENTO
+// ==============================
+
 const form = document.getElementById("quoteForm");
 const statusEl = document.getElementById("formStatus");
 
-if (form) {
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+if (form && statusEl) {
+
+  form.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
 
     statusEl.textContent = "Enviando solicitação...";
 
-    const dados = {
-      name: form.elements["name"].value,
-      email: form.elements["email"].value,
-      whatsapp: form.elements["phone"].value,
-      city: form.elements["city"].value,
-      service: form.elements["service"].value,
-      quantity: form.elements["quantity"].value,
-      message: form.elements["message"].value
-    };
-
     try {
-      await emailjs.send(
+
+      // Confirma se a biblioteca EmailJS foi carregada
+      if (typeof emailjs === "undefined") {
+        throw new Error("A biblioteca EmailJS não foi carregada.");
+      }
+
+      // Pega os valores dos campos do formulário
+      const campo = function (nome) {
+        const elemento = form.elements[nome];
+
+        if (!elemento) {
+          return "";
+        }
+
+        return elemento.value.trim();
+      };
+
+      // Dados enviados para o template do EmailJS
+      const dados = {
+        name: campo("name"),
+        email: campo("email"),
+        whatsapp: campo("phone"),
+        city: campo("city"),
+        service: campo("service"),
+        quantity: campo("quantity"),
+        message: campo("message")
+      };
+
+      // Envia para o EmailJS
+      const resposta = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         dados,
@@ -44,21 +75,29 @@ if (form) {
         }
       );
 
-      statusEl.textContent =
-        "Solicitação enviada com sucesso! A RD Networks entrará em contato após analisar as informações.";
+      console.log("EmailJS:", resposta);
 
+      // Mensagem de sucesso
+      statusEl.textContent =
+        "Solicitação enviada com sucesso! A RD Networks recebeu seus dados e entrará em contato após analisar a solicitação.";
+
+      // Limpa o formulário
       form.reset();
 
-   } catch (error) {
-  console.error("Erro EmailJS:", error);
+    } catch (error) {
 
-  const detalhe =
-    error?.text ||
-    error?.message ||
-    JSON.stringify(error) ||
-    String(error);
+      console.error("Erro EmailJS:", error);
 
-  statusEl.textContent = "ERRO EMAILJS: " + detalhe;
-}
+      const detalhe =
+        error?.text ||
+        error?.message ||
+        String(error);
+
+      // Mostra o erro na própria página
+      statusEl.textContent =
+        "ERRO EMAILJS: " + detalhe;
+    }
+
   });
+
 }
