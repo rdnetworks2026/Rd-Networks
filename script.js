@@ -1,32 +1,43 @@
+// ==========================================
+// CONFIGURAÇÃO EMAILJS - RD NETWORKS
+// ==========================================
+
 const EMAILJS_PUBLIC_KEY = "ghlxfFM1Lr0pAIpGk";
 const EMAILJS_SERVICE_ID = "service_gyzcb9g";
 const EMAILJS_TEMPLATE_ID = "template_vis868m";
 
-// ==============================
+
+// ==========================================
 // MENU MOBILE
-// ==============================
+// ==========================================
 
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
 
 if (menu && nav) {
+
   menu.addEventListener("click", function () {
     nav.classList.toggle("open");
   });
 
   document.querySelectorAll("nav a").forEach(function (link) {
+
     link.addEventListener("click", function () {
       nav.classList.remove("open");
     });
+
   });
+
 }
 
-// ==============================
+
+// ==========================================
 // FORMULÁRIO DE ORÇAMENTO
-// ==============================
+// ==========================================
 
 const form = document.getElementById("quoteForm");
 const statusEl = document.getElementById("formStatus");
+
 
 if (form && statusEl) {
 
@@ -38,13 +49,27 @@ if (form && statusEl) {
 
     try {
 
-      // Confirma se a biblioteca EmailJS foi carregada
+      // Verifica se o EmailJS foi carregado
       if (typeof emailjs === "undefined") {
         throw new Error("A biblioteca EmailJS não foi carregada.");
       }
 
-      // Pega os valores dos campos do formulário
-      const campo = function (nome) {
+
+      // ======================================
+      // INICIALIZA EMAILJS
+      // ======================================
+
+      emailjs.init({
+        publicKey: EMAILJS_PUBLIC_KEY
+      });
+
+
+      // ======================================
+      // FUNÇÃO PARA LER OS CAMPOS
+      // ======================================
+
+      function campo(nome) {
+
         const elemento = form.elements[nome];
 
         if (!elemento) {
@@ -52,54 +77,91 @@ if (form && statusEl) {
         }
 
         return elemento.value.trim();
-      };
+      }
 
-      // Dados enviados para o template do EmailJS
+
+      // ======================================
+      // DADOS DO FORMULÁRIO
+      // ======================================
+
       const dados = {
+
         name: campo("name"),
+
         email: campo("email"),
+
+        // No seu index.html o WhatsApp
+        // está identificado como "phone"
         whatsapp: campo("phone"),
+
         city: campo("city"),
+
         service: campo("service"),
+
         quantity: campo("quantity"),
+
         message: campo("message")
+
       };
 
-      // Envia para o EmailJS
-     const envioEmailJS = emailjs.send(
-  EMAILJS_SERVICE_ID,
-  EMAILJS_TEMPLATE_ID,
-  dados,
-  {
-    publicKey: EMAILJS_PUBLIC_KEY
-  }
-);
 
-const limiteTempo = new Promise((_, reject) => {
-  setTimeout(() => {
-    reject(
-      new Error(
-        "TIMEOUT: o navegador não recebeu resposta do EmailJS após 15 segundos."
-      )
-    );
-  }, 15000);
-});
+      // ======================================
+      // ENVIO PELO EMAILJS
+      // ======================================
 
-const resposta = await Promise.race([
-  envioEmailJS,
-  limiteTempo
-]);
+      const envioEmailJS = emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        dados
+      );
 
-      console.log("EmailJS:", resposta);
 
-      // Mensagem de sucesso
+      // ======================================
+      // LIMITE DE 15 SEGUNDOS
+      // ======================================
+
+      const limiteTempo = new Promise(function (_, reject) {
+
+        setTimeout(function () {
+
+          reject(
+            new Error(
+              "TIMEOUT: o EmailJS não respondeu após 15 segundos."
+            )
+          );
+
+        }, 15000);
+
+      });
+
+
+      // Aguarda envio ou timeout
+
+      const resposta = await Promise.race([
+        envioEmailJS,
+        limiteTempo
+      ]);
+
+
+      console.log("Resposta EmailJS:", resposta);
+
+
+      // ======================================
+      // SUCESSO
+      // ======================================
+
       statusEl.textContent =
         "Solicitação enviada com sucesso! A RD Networks recebeu seus dados e entrará em contato após analisar a solicitação.";
 
-      // Limpa o formulário
       form.reset();
 
+
     } catch (error) {
+
+
+      // ======================================
+      // ERRO
+      // ======================================
 
       console.error("Erro EmailJS:", error);
 
@@ -108,9 +170,9 @@ const resposta = await Promise.race([
         error?.message ||
         String(error);
 
-      // Mostra o erro na própria página
       statusEl.textContent =
         "ERRO EMAILJS: " + detalhe;
+
     }
 
   });
