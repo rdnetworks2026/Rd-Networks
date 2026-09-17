@@ -27,7 +27,7 @@ if (form) {
     const dados = {
       name: form.elements["name"].value,
       email: form.elements["email"].value,
-      whatsapp: form.elements["whatsapp"].value,
+      whatsapp: form.elements["phone"].value,
       city: form.elements["city"].value,
       service: form.elements["service"].value,
       quantity: form.elements["quantity"].value,
