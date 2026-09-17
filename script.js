@@ -49,11 +49,16 @@ if (form) {
 
       form.reset();
 
-    } catch (error) {
-      console.error("Erro EmailJS:", error);
+   } catch (error) {
+  console.error("Erro EmailJS:", error);
 
-      statusEl.textContent =
-        "Não foi possível enviar agora. Tente novamente ou entre em contato diretamente com a RD Networks.";
-    }
+  const detalhe =
+    error?.text ||
+    error?.message ||
+    JSON.stringify(error) ||
+    String(error);
+
+  statusEl.textContent = "ERRO EMAILJS: " + detalhe;
+}
   });
 }
