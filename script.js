@@ -1,4 +1,4 @@
-const EMAILJS_PUBLIC_KEY = "ghlxfFM1Lr0pAIpGk";
+const EMAILJS_PUBLIC_KEY = "ghlxfFM1Lr0pAlpGk";
 const EMAILJS_SERVICE_ID = "service_gyzcb9g";
 const EMAILJS_TEMPLATE_ID = "template_vis868m";
 
