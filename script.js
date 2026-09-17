@@ -66,14 +66,29 @@ if (form && statusEl) {
       };
 
       // Envia para o EmailJS
-      const resposta = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        dados,
-        {
-          publicKey: EMAILJS_PUBLIC_KEY
-        }
-      );
+     const envioEmailJS = emailjs.send(
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  dados,
+  {
+    publicKey: EMAILJS_PUBLIC_KEY
+  }
+);
+
+const limiteTempo = new Promise((_, reject) => {
+  setTimeout(() => {
+    reject(
+      new Error(
+        "TIMEOUT: o navegador não recebeu resposta do EmailJS após 15 segundos."
+      )
+    );
+  }, 15000);
+});
+
+const resposta = await Promise.race([
+  envioEmailJS,
+  limiteTempo
+]);
 
       console.log("EmailJS:", resposta);
 
