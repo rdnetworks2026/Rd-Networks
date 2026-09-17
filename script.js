@@ -2,7 +2,7 @@
 // CONFIGURAÇÃO EMAILJS - RD NETWORKS
 // ==========================================
 
-const EMAILJS_PUBLIC_KEY = "ghlxfFM1Lr0pAIpGk";
+const EMAILJS_PUBLIC_KEY = "UmwT4S5HgDSr0BGEf";
 const EMAILJS_SERVICE_ID = "service_gyzcb9g";
 const EMAILJS_TEMPLATE_ID = "template_vis868m";
 
