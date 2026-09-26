@@ -17,3 +17,13 @@
 .presentation .btn{flex-shrink:0;text-align:center}
 nav{gap:16px}
 @media(max-width:850px){.remote-grid .service-photo img{height:220px}.presentation{flex-direction:column;align-items:flex-start}.presentation .btn{width:100%}}
+.direct-contact{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;background:#fff;border-top:1px solid var(--line)}
+.direct-contact h2{margin-bottom:20px}
+.direct-contact p:last-child{color:var(--muted);line-height:1.7}
+.contact-email{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:18px;background:#f5f9fc;text-decoration:none;color:var(--navy);overflow-wrap:anywhere}
+.contact-email span{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue)}
+.contact-email strong{font-size:clamp(20px,2.4vw,32px)}
+.contact-email small{font-size:14px;color:var(--blue);font-weight:800}
+.quote-intro a{color:#b9e8ff}
+@media(max-width:1050px){nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}}
+@media(max-width:850px){.direct-contact{grid-template-columns:1fr;gap:20px}.contact-email{padding:24px}}
