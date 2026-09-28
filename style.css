@@ -45,3 +45,5 @@ nav{gap:16px}
 
 /* Contato rápido pelo WhatsApp */
 .contact-options{display:grid;gap:14px}.contact-whatsapp{display:flex;flex-direction:column;gap:10px;padding:26px 32px;border-radius:18px;background:#e6f6ec;color:#123d25;text-decoration:none;overflow-wrap:anywhere;border:1px solid #bce5cb}.contact-whatsapp span{font-size:12px;letter-spacing:.12em;font-weight:800;color:#166c3a}.contact-whatsapp strong{font-size:clamp(20px,2.4vw,30px)}.contact-whatsapp small{font-size:14px;font-weight:800;color:#166c3a}.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:9px;padding:13px 18px;background:#167a43;color:#fff;text-decoration:none;border-radius:999px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.22)}.whatsapp-float span:first-child{font-size:22px;line-height:1}.whatsapp-float:hover,.contact-whatsapp:hover{filter:brightness(.93)}@media(max-width:850px){.whatsapp-float{right:14px;bottom:14px;padding:13px 15px}.contact-whatsapp{padding:24px}}
+
+.services article:first-child .service-photo img{object-fit:cover;background:#dfe7ef}
