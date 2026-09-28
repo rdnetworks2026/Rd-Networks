@@ -10,8 +10,8 @@
 <body>
 <header class="topbar">
   <a class="brand" href="#inicio"><span>RD</span> NETWORKS</a>
-  <button class="menu" aria-label="Abrir menu">☰</button>
-  <nav>
+  <button class="menu" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">☰</button>
+  <nav id="mainNav" aria-label="Navegação principal">
     <a href="#servicos">Serviços</a><a href="#remoto">Serviços online</a><a href="#apresentacao">Apresentação</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a class="nav-cta" href="#orcamento">Pedir orçamento</a>
   </nav>
 </header>
@@ -30,6 +30,8 @@
     <div class="node n1">RJ45</div><div class="node n2">CFTV IP</div><div class="node n3">FIBRA</div>
   </div>
 </section>
+
+<section class="offer-strip" aria-label="Oferta de primeiro serviço"><div><strong>15% de desconto no primeiro serviço</strong><p>Para novos clientes, sem valor mínimo. O material é fornecido pelo cliente; visita e deslocamento são informados no orçamento.</p></div><a href="#orcamento">Solicitar proposta <span aria-hidden="true">→</span></a></section>
 
 <section id="servicos" class="section">
   <p class="eyebrow">O QUE FAZEMOS</p><h2>Serviços de infraestrutura</h2>
@@ -57,6 +59,8 @@
   <a class="btn primary" href="assets/RD_Networks_Apresentacao_Comercial.pdf" download="RD_Networks_Apresentacao_Comercial.pdf">Baixar apresentação completa (PDF, 14 páginas)</a>
 </section>
 
+<section class="section steps" aria-labelledby="steps-title"><p class="eyebrow">COMO FUNCIONA</p><h2 id="steps-title">Do pedido à execução, com escopo claro.</h2><ol><li><strong>Você descreve a necessidade</strong><span>Informe a cidade, o ambiente e a quantidade aproximada de pontos ou equipamentos.</span></li><li><strong>Definimos a proposta</strong><span>Avaliamos fotos ou combinamos uma visita, quando necessária, e detalhamos serviço, materiais, prazo e deslocamento.</span></li><li><strong>Executamos o que foi aprovado</strong><span>Na entrega, conferimos o escopo e fornecemos a documentação prevista na proposta.</span></li></ol></section>
+
 <section id="sobre" class="section split">
   <div><p class="eyebrow">RD NETWORKS</p><h2>Empresa nova, serviço levado a sério.</h2></div>
   <div><p>A RD Networks é uma pequena empresa de Vitória/ES, com uma equipe de duas pessoas. Atendemos serviços pontuais de infraestrutura física, pequenos serviços elétricos e projetos de documentação e planejamento online. Cada proposta define escopo, prazo, entregáveis e eventuais custos de deslocamento antes da execução.</p><p class="muted">CNPJ 69.318.238/0001-66 · Responsável: Rodrigo de Souza Conceição.</p></div>
@@ -74,18 +78,17 @@
 
 <section id="orcamento" class="section quote">
   <div class="quote-intro"><p class="eyebrow">SOLICITE UMA PROPOSTA</p><h2>Conte o que você precisa.</h2><p>Descreva seu ambiente e o serviço desejado. Se tiver fotos, plantas ou lista de equipamentos, podemos combinar o envio desses materiais após o primeiro contato. Você também pode escrever para <a href="mailto:rdnetworks2026@gmail.com">rdnetworks2026@gmail.com</a>.</p></div>
-  <form id="quoteForm">
+  <form id="quoteForm" aria-label="Solicitação de orçamento">
     <div class="two"><label>Nome / empresa<input name="name" required placeholder="Seu nome ou empresa"></label><label>E-mail<input type="email" name="email" required placeholder="voce@empresa.com"></label></div>
     <div class="two"><label>WhatsApp<input name="phone" placeholder="(27) 99999-9999"></label><label>Cidade<input name="city" placeholder="Vitória / Vila Velha / Serra..."></label></div>
     <div class="two"><label>Serviço<select name="service" required><option value="">Selecione</option><option>Cabeamento estruturado</option><option>Organização de rack</option><option>Instalação de rack</option><option>Patch panel</option><option>Pontos RJ45 / tomadas</option><option>CFTV IP</option><option>Fibra óptica</option><option>Documentação de redes</option><option>Projeto de rack online</option><option>Pequenos serviços elétricos</option><option>Visita técnica</option><option>Outro</option></select></label><label>Quantidade aproximada<input type="number" min="0" name="quantity" placeholder="Ex.: 12 pontos ou equipamentos"></label></div>
     <label>Descreva a necessidade<textarea name="message" required rows="6" placeholder="Informe cidade, serviço, quantidades, equipamentos existentes e o que deseja receber."></textarea></label>
     <label class="consent"><input type="checkbox" required> Autorizo o uso destes dados para contato e elaboração da proposta solicitada.</label>
     <button class="btn primary" type="submit">Enviar solicitação</button>
-    <p id="formStatus" class="status" role="status"></p>
+    <p id="formStatus" class="status" role="status" aria-live="polite"></p>
   </form>
 </section>
 </main>
 <footer><div><strong>RD NETWORKS</strong><span>Infraestrutura que conecta.</span><a href="mailto:rdnetworks2026@gmail.com">E-mail</a><a href="https://www.linkedin.com/company/rd-networks/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div><p>CNPJ 69.318.238/0001-66 · © 2026 RD Networks.</p></footer>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body></html>
