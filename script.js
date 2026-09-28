@@ -17,12 +17,16 @@ const nav = document.querySelector("nav");
 
 if (menu && nav) {
   menu.addEventListener("click", function () {
-    nav.classList.toggle("open");
+    const isOpen = nav.classList.toggle("open");
+    menu.setAttribute("aria-expanded", String(isOpen));
+    menu.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
   });
 
   document.querySelectorAll("nav a").forEach(function (link) {
     link.addEventListener("click", function () {
       nav.classList.remove("open");
+      menu.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-label", "Abrir menu");
     });
   });
 }
@@ -34,6 +38,7 @@ if (menu && nav) {
 
 const form = document.getElementById("quoteForm");
 const statusEl = document.getElementById("formStatus");
+const submitButton = form?.querySelector('button[type="submit"]');
 
 if (form && statusEl) {
 
@@ -41,6 +46,8 @@ if (form && statusEl) {
 
     event.preventDefault();
 
+    if (submitButton?.disabled) return;
+    if (submitButton) submitButton.disabled = true;
     statusEl.textContent = "Enviando solicitação...";
 
     function campo(nome) {
@@ -121,14 +128,16 @@ if (form && statusEl) {
       if (error.name === "AbortError") {
 
         statusEl.textContent =
-          "ERRO: o servidor demorou mais de 15 segundos para responder.";
+          "Não foi possível confirmar o envio agora. Tente novamente ou escreva para rdnetworks2026@gmail.com.";
 
       } else {
 
         statusEl.textContent =
-          "ERRO EMAILJS: " + error.message;
+          "Não foi possível enviar a solicitação. Tente novamente ou escreva para rdnetworks2026@gmail.com.";
 
       }
+    } finally {
+      if (submitButton) submitButton.disabled = false;
     }
 
   });
