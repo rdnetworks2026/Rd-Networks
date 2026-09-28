@@ -52,3 +52,5 @@ nav{gap:16px}
 .service-photo--cftv .photo-frame{height:180px;overflow:hidden;border-radius:10px;background:#dfe7ef}
 .service-photo--cftv .photo-frame img{height:100%;border-radius:0;object-position:56% 25%;transform:scale(1.8);transform-origin:56% 33%}
 @media(max-width:850px){.service-photo--cftv .photo-frame{height:200px}}
+
+.detail-visual--cftv img{object-position:55% 28%}
