@@ -54,3 +54,11 @@ nav{gap:16px}
 @media(max-width:850px){.service-photo--cftv .photo-frame{height:200px}}
 
 .detail-visual--cftv img{object-position:55% 28%}
+
+/* Commercial presentations in three languages */
+.presentation-downloads{flex:1;min-width:0;max-width:580px}
+.presentation-language-label{font-weight:700;font-size:14px;line-height:1.5}
+.presentation-language-links{display:flex;gap:12px;flex-wrap:wrap}
+.presentation-language-links .btn{white-space:nowrap}
+.presentation-pdf-note{font-size:12px;color:#637083;margin-bottom:0}
+@media(max-width:600px){.presentation-language-links{flex-direction:column}.presentation-language-links .btn{width:100%;text-align:center}}
