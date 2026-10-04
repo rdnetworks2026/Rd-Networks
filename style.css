@@ -74,3 +74,14 @@ nav{gap:16px}
 .problem-grid p{color:var(--muted);line-height:1.6;margin:0}
 @media(max-width:1050px){.problem-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.problem-grid{grid-template-columns:1fr}.problem-grid article{min-height:0}}
+
+/* Conversão comercial 2026-10-04 */
+.problems,.partner,.why,.service-table,.evaluation{max-width:1180px;margin:0 auto}
+.partner{display:grid;grid-template-columns:1.25fr .9fr;gap:42px;align-items:center}
+.partner-list{display:grid;gap:12px}.partner-list span{padding:13px 16px;border:1px solid rgba(0,0,0,.1);border-radius:10px}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.why-grid article{padding:22px;border:1px solid rgba(0,0,0,.1);border-radius:12px}.why-grid strong{display:block;margin-bottom:8px}
+.service-check-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.service-check-grid span{padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:10px}
+.evaluation{display:flex;justify-content:space-between;align-items:center;gap:30px}.evaluation>div{max-width:760px}
+.linkedin-links{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}.linkedin-links a{padding:10px 14px;border:1px solid rgba(0,0,0,.12);border-radius:9px}
+@media(max-width:800px){.partner{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.service-check-grid{grid-template-columns:1fr 1fr}.evaluation{display:block}.evaluation .btn{margin-top:18px}}
+@media(max-width:520px){.why-grid,.service-check-grid{grid-template-columns:1fr}}
