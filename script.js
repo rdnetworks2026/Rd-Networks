@@ -70,7 +70,11 @@ if (form && statusEl) {
         name: campo("name"),
         email: campo("email"),
         whatsapp: campo("phone"),
+        client_type: campo("client_type"),
         city: campo("city"),
+        neighborhood: campo("neighborhood"),
+        cnpj: campo("cnpj"),
+        contact_preference: campo("contact_preference"),
         service: campo("service"),
         request_type: campo("request_type"),
         quantity: campo("quantity"),
@@ -78,7 +82,10 @@ if (form && statusEl) {
         preferred_time: campo("preferred_time"),
         materials: campo("materials"),
         existing_rack: campo("existing_rack"),
-        message: campo("message")
+        first_service: campo("first_service"),
+        has_files: campo("has_files"),
+        message: campo("message"),
+        protocol: "RD-" + new Date().toISOString().replace(/\D/g, "").slice(0,14)
       }
     };
 
@@ -119,8 +126,10 @@ if (form && statusEl) {
         );
       }
 
+      const protocolo = dados.template_params.protocol;
+
       statusEl.textContent =
-        "Solicitação enviada com sucesso! A RD Networks recebeu seus dados e entrará em contato após analisar a solicitação.";
+        "Solicitação enviada com sucesso! Protocolo " + protocolo + ". A RD Networks recebeu os dados e entrará em contato após analisar o escopo.";
 
       form.reset();
 
