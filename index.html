@@ -7,7 +7,7 @@
   <title>RD Networks | Infraestrutura de redes em Vitória, ES</title>
   <link rel="canonical" href="https://rdnetworks2026.github.io/Rd-Networks/" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RD Networks","url":"https://rdnetworks2026.github.io/Rd-Networks/","email":"rdnetworks2026@gmail.com","telephone":"+55 27 99255-1513","sameAs":["https://www.linkedin.com/company/rd-networks-global-2026/"],"areaServed":["Vitória","Vila Velha","Serra","Cariacica"]}</script>
-  <link rel="stylesheet" href="style.css?v=20261004-orcamento1" />
+  <link rel="stylesheet" href="style.css?v=20261004-comercial1" />
 </head>
 <body>
 <header class="topbar">
@@ -249,8 +249,16 @@
       <label>E-mail<input type="email" name="email" required autocomplete="email" placeholder="voce@empresa.com"></label>
     </div>
     <div class="two">
-      <label>WhatsApp<input name="phone" autocomplete="tel" placeholder="(27) 99999-9999"></label>
+      <label>WhatsApp<input name="phone" required autocomplete="tel" placeholder="(27) 99999-9999"></label>
+      <label>Tipo de cliente<select name="client_type" required><option value="">Selecione</option><option>Empresa</option><option>Residencial</option><option>Empresa de TI / Integrador</option><option>Outro</option></select></label>
+    </div>
+    <div class="two">
       <label>Cidade / país<input name="city" required placeholder="Ex.: Vitória / ES"></label>
+      <label>Bairro / região<input name="neighborhood" placeholder="Opcional"></label>
+    </div>
+    <div class="two">
+      <label>CNPJ <small class="field-note">Opcional</small><input name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00"></label>
+      <label>Como prefere receber o retorno?<select name="contact_preference"><option value="">Selecione</option><option>WhatsApp</option><option>E-mail</option><option>WhatsApp e e-mail</option></select></label>
     </div>
 
     <div class="form-section-title"><span>3</span><div><strong>O que você precisa?</strong><small>Essas informações ajudam a dimensionar o orçamento.</small></div></div>
@@ -269,6 +277,11 @@
       <label>Materiais<input type="text" name="materials" placeholder="Já possui / precisa de orientação / não sei"></label>
       <label>Há um rack existente?<select name="existing_rack"><option value="">Selecione</option><option>Sim</option><option>Não</option><option>Não sei</option><option>Não se aplica</option></select></label>
     </div>
+    <div class="two">
+      <label>É o seu primeiro serviço com a RD Networks?<select name="first_service"><option value="">Selecione</option><option>Sim</option><option>Não</option><option>Não sei</option></select></label>
+      <label>Já possui fotos, planta ou medidas?<select name="has_files"><option value="">Selecione</option><option>Sim</option><option>Não</option><option>Parcialmente</option></select></label>
+    </div>
+    <div class="commercial-note"><strong>Como funciona:</strong> depois da análise, a proposta pode separar mão de obra, materiais, deslocamento, prazo e condições de pagamento. O desconto de primeiro serviço, quando aplicável, será informado na proposta final.</div>
     <label class="consent"><input type="checkbox" name="consent" required> Autorizo o uso destes dados para contato e elaboração da proposta solicitada.</label>
     <div class="quote-actions">
       <button class="btn primary" type="submit">Enviar solicitação de orçamento →</button>
@@ -280,5 +293,5 @@
 </main>
 <footer><div><strong>RD NETWORKS</strong><span>Infraestrutura que conecta.</span><a href="mailto:rdnetworks2026@gmail.com">E-mail</a><a href="https://www.linkedin.com/company/rd-networks-global-2026/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div><p>CNPJ 69.318.238/0001-66 · © 2026 RD Networks.</p></footer>
 <a class="whatsapp-float" href="https://wa.me/5527992551513?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20RD%20Networks%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp"><span aria-hidden="true">✆</span><span>WhatsApp</span></a>
-<script src="script.js?v=20261004-conversion3"></script>
+<script src="script.js?v=20261004-comercial1"></script>
 </body></html>
