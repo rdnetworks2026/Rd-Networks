@@ -72,7 +72,12 @@ if (form && statusEl) {
         whatsapp: campo("phone"),
         city: campo("city"),
         service: campo("service"),
+        request_type: campo("request_type"),
         quantity: campo("quantity"),
+        urgency: campo("urgency"),
+        preferred_time: campo("preferred_time"),
+        materials: campo("materials"),
+        existing_rack: campo("existing_rack"),
         message: campo("message")
       }
     };
