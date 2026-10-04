@@ -110,3 +110,9 @@ nav{gap:16px}
 @media(max-width:1050px){.steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:800px){.faq-grid{grid-template-columns:1fr}}
 @media(max-width:520px){.steps-grid{grid-template-columns:1fr}.step-card{min-height:0}.service-table-wrap{border-radius:10px}}
+
+
+/* Novos blocos comerciais */
+.choice{max-width:1180px;margin:0 auto}.choice .section-heading{max-width:820px}.choice .plan-card{display:flex;flex-direction:column;align-items:flex-start}.choice .plan-card .btn{margin-top:auto}.plans .plan-card{display:flex;flex-direction:column;align-items:flex-start}.plans .plan-card ul{margin-bottom:24px}.plans .plan-card .btn{margin-top:auto}.partner .btn{margin-top:8px}.faq-grid{max-width:1180px;margin:0 auto}.choice .plans-grid{margin-bottom:28px}
+@media(max-width:800px){.choice .plans-grid{grid-template-columns:1fr 1fr}.choice .plan-card{min-height:0}}
+@media(max-width:520px){.choice .plans-grid{grid-template-columns:1fr}}
