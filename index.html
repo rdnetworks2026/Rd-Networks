@@ -7,7 +7,7 @@
   <title>RD Networks | Infraestrutura de redes em Vitória, ES</title>
   <link rel="canonical" href="https://rdnetworks2026.github.io/Rd-Networks/" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RD Networks","url":"https://rdnetworks2026.github.io/Rd-Networks/","email":"rdnetworks2026@gmail.com","telephone":"+55 27 99255-1513","sameAs":["https://www.linkedin.com/company/rd-networks-global-2026/"],"areaServed":["Vitória","Vila Velha","Serra","Cariacica"]}</script>
-  <link rel="stylesheet" href="style.css?v=20261004-conversion5" />
+  <link rel="stylesheet" href="style.css?v=20261004-orcamento1" />
 </head>
 <body>
 <header class="topbar">
@@ -222,15 +222,58 @@
   <div class="linkedin-links"><a href="https://www.linkedin.com/company/rd-networks-global-2026/" target="_blank" rel="noopener">LinkedIn RD Networks Global</a><a href="https://www.linkedin.com/company/rd-networks/" target="_blank" rel="noopener">LinkedIn RD Networks</a></div><div class="contact-options"><a class="contact-whatsapp" href="https://wa.me/5527992551513?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20RD%20Networks%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer"><span>WHATSAPP COMERCIAL</span><strong>+55 (27) 99255-1513</strong><small>Conversar e pedir orçamento →</small></a><a class="contact-email" href="mailto:rdnetworks2026@gmail.com"><span>E-MAIL COMERCIAL</span><strong>rdnetworks2026@gmail.com</strong><small>Abrir seu aplicativo de e-mail →</small></a></div>
 </section>
 
-<section id="orcamento" class="section quote">
-  <div class="quote-intro"><p class="eyebrow">SOLICITE UMA PROPOSTA</p><h2>Conte o que você precisa.</h2><p>Descreva seu ambiente e o serviço desejado. Se tiver fotos, plantas ou lista de equipamentos, podemos combinar o envio desses materiais após o primeiro contato. Você também pode escrever para <a href="mailto:rdnetworks2026@gmail.com">rdnetworks2026@gmail.com</a> ou <a href="https://wa.me/5527992551513?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20RD%20Networks%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">conversar pelo WhatsApp</a>.</p></div>
+<section id="orcamento" class="section quote" aria-labelledby="quote-title">
+  <div class="quote-intro">
+    <p class="eyebrow">SOLICITAÇÃO DE ORÇAMENTO</p>
+    <h2 id="quote-title">Vamos entender o seu projeto.</h2>
+    <p>Preencha as informações abaixo. Quanto mais detalhes você enviar, mais rápido conseguimos avaliar o escopo e preparar uma proposta.</p>
+    <div class="quote-process">
+      <span><strong>01</strong> Você informa a necessidade</span>
+      <span><strong>02</strong> Analisamos o escopo</span>
+      <span><strong>03</strong> Enviamos a proposta</span>
+    </div>
+    <p class="muted">Fotos, plantas, medidas e imagens do rack podem ser enviadas pelo WhatsApp depois do primeiro contato.</p>
+  </div>
   <form id="quoteForm" aria-label="Solicitação de orçamento">
-    <div class="two"><label>Nome / empresa<input name="name" required placeholder="Seu nome ou empresa"></label><label>E-mail<input type="email" name="email" required placeholder="voce@empresa.com"></label></div>
-    <div class="two"><label>WhatsApp<input name="phone" placeholder="(27) 99999-9999"></label><label>Cidade<input name="city" placeholder="Vitória / Vila Velha / Serra..."></label></div>
-    <div class="two"><label>Serviço<select name="service" required><option value="">Selecione</option><option>Cabeamento estruturado</option><option>Organização de rack</option><option>Instalação de rack</option><option>Patch panel</option><option>Pontos RJ45 / tomadas</option><option>CFTV IP</option><option>Fibra óptica</option><option>Documentação de redes</option><option>Projeto de rack online</option><option>Pequenos serviços elétricos</option><option>Visita técnica</option><option>Outro</option></select></label><label>Quantidade aproximada<input type="number" min="0" name="quantity" placeholder="Ex.: 12 pontos ou equipamentos"></label></div>
-    <label>Descreva a necessidade<textarea name="message" required rows="6" placeholder="Informe cidade, serviço, quantidades, equipamentos existentes e o que deseja receber."></textarea></label>
-    <label class="consent"><input type="checkbox" required> Autorizo o uso destes dados para contato e elaboração da proposta solicitada.</label>
-    <button class="btn primary" type="submit">Enviar solicitação</button>
+    <div class="form-section-title"><span>1</span><div><strong>Tipo de atendimento</strong><small>Escolha a opção que mais se aproxima da sua necessidade.</small></div></div>
+    <div class="request-types" role="group" aria-label="Tipo de atendimento">
+      <label class="request-type"><input type="radio" name="request_type" value="Serviço avulso" required><span><strong>Serviço avulso</strong><small>Uma execução específica</small></span></label>
+      <label class="request-type"><input type="radio" name="request_type" value="Plano mensal"><span><strong>Plano mensal</strong><small>Atendimento recorrente</small></span></label>
+      <label class="request-type"><input type="radio" name="request_type" value="Apoio B2B"><span><strong>Apoio B2B</strong><small>Execução para empresa de TI</small></span></label>
+      <label class="request-type"><input type="radio" name="request_type" value="Serviço online / Global"><span><strong>Online / Global</strong><small>Documentação ou projeto de rack</small></span></label>
+    </div>
+
+    <div class="form-section-title"><span>2</span><div><strong>Seus dados</strong><small>Usaremos somente para responder à solicitação.</small></div></div>
+    <div class="two">
+      <label>Nome / empresa<input name="name" required autocomplete="name" placeholder="Seu nome ou empresa"></label>
+      <label>E-mail<input type="email" name="email" required autocomplete="email" placeholder="voce@empresa.com"></label>
+    </div>
+    <div class="two">
+      <label>WhatsApp<input name="phone" autocomplete="tel" placeholder="(27) 99999-9999"></label>
+      <label>Cidade / país<input name="city" required placeholder="Ex.: Vitória / ES"></label>
+    </div>
+
+    <div class="form-section-title"><span>3</span><div><strong>O que você precisa?</strong><small>Essas informações ajudam a dimensionar o orçamento.</small></div></div>
+    <div class="two">
+      <label>Serviço principal<select name="service" required><option value="">Selecione</option><option>Cabeamento estruturado</option><option>Organização de rack</option><option>Instalação de rack</option><option>Patch panel</option><option>Pontos RJ45 / tomadas</option><option>CFTV IP</option><option>Fibra óptica</option><option>Documentação de redes</option><option>Projeto de rack online</option><option>Pequenos serviços elétricos</option><option>Visita técnica</option><option>Outro</option></select></label>
+      <label>Quantidade aproximada<input type="text" name="quantity" placeholder="Ex.: 12 pontos / 8 câmeras / 1 rack"></label>
+    </div>
+    <div class="two">
+      <label>Prazo desejado<select name="urgency"><option value="">Selecione</option><option>Sem urgência</option><option>Nos próximos 30 dias</option><option>Nos próximos 15 dias</option><option>O quanto antes</option></select></label>
+      <label>Horário preferencial<select name="preferred_time"><option value="">Selecione</option><option>Durante a semana à noite</option><option>Sábado</option><option>Domingo</option><option>Horário comercial</option><option>Serviço online</option></select></label>
+    </div>
+    <label>Descreva a necessidade<textarea name="message" required rows="6" placeholder="Ex.: preciso instalar 12 pontos de rede em um escritório, organizar o rack existente e identificar os cabos."></textarea></label>
+
+    <div class="form-section-title"><span>4</span><div><strong>Informações adicionais</strong><small>Opcional, mas ajuda na análise.</small></div></div>
+    <div class="two">
+      <label>Materiais<input type="text" name="materials" placeholder="Já possui / precisa de orientação / não sei"></label>
+      <label>Há um rack existente?<select name="existing_rack"><option value="">Selecione</option><option>Sim</option><option>Não</option><option>Não sei</option><option>Não se aplica</option></select></label>
+    </div>
+    <label class="consent"><input type="checkbox" name="consent" required> Autorizo o uso destes dados para contato e elaboração da proposta solicitada.</label>
+    <div class="quote-actions">
+      <button class="btn primary" type="submit">Enviar solicitação de orçamento →</button>
+      <a class="btn secondary" href="https://wa.me/5527992551513?text=Ol%C3%A1%2C%20vim%20pelo%20formul%C3%A1rio%20de%20or%C3%A7amento%20da%20RD%20Networks%20e%20quero%20enviar%20fotos%20ou%20explicar%20o%20projeto." target="_blank" rel="noopener noreferrer">Enviar fotos pelo WhatsApp</a>
+    </div>
     <p id="formStatus" class="status" role="status" aria-live="polite"></p>
   </form>
 </section>
