@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rdnetworks2026.github.io/Rd-Networks/sitemap.xml
