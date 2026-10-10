@@ -34,7 +34,7 @@ if(form&&statusEl){
       user_id:EMAILJS_PUBLIC_KEY,
       template_params:{
         name:get("name"),email:get("email"),whatsapp:get("phone"),client_type:get("client_type"),
-        city:get("city"),neighborhood:"",cnpj:"",contact_preference:"WhatsApp e/ou e-mail",
+        country:get("country"),city:get("city"),neighborhood:"",cnpj:"",contact_preference:"WhatsApp e/ou e-mail",
         service:get("service"),request_type:selected,quantity:get("quantity"),urgency:get("urgency"),
         preferred_time:"A combinar",materials:get("materials"),existing_rack:"",first_service:"",
         has_files:get("has_files"),message:get("message"),protocol
@@ -55,3 +55,15 @@ if(form&&statusEl){
     }finally{if(button)button.disabled=false;}
   });
 }
+const countrySelect=document.getElementById("quoteCountry");
+const internationalNotice=document.getElementById("internationalNotice");
+const requestTypeInputs=document.querySelectorAll('input[name="request_type"]');
+function updateInternationalNotice(){
+  if(!countrySelect||!internationalNotice)return;
+  const international=countrySelect.value!=="Brasil";
+  const selectedType=document.querySelector('input[name="request_type"]:checked')?.value||"";
+  internationalNotice.hidden=!(international||selectedType==="Online / Global");
+}
+if(countrySelect)countrySelect.addEventListener("change",updateInternationalNotice);
+requestTypeInputs.forEach(input=>input.addEventListener("change",updateInternationalNotice));
+updateInternationalNotice();
