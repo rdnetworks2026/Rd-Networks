@@ -26,3 +26,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 /* Conversão comercial: caminhos rápidos para novos clientes */
 .lead-path-card{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.lead-path-card p{flex:1}.lead-path-card .btn{margin-top:8px;white-space:normal;text-align:center}.lead-path-note{max-width:1000px;margin:24px auto 0;padding:18px 20px;border-left:3px solid var(--cyan);background:var(--soft);color:var(--muted);line-height:1.7}.lead-path-note strong{color:var(--navy)}
 @media(max-width:560px){.lead-path-card .btn{width:100%}.lead-path-note{padding:15px}}
+
+
+/* Portfólio técnico: diagramas e exemplos de documentação */
+.technical-portfolio{align-items:stretch}
+.technical-portfolio figure{min-width:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.technical-portfolio figure>a{display:block;background:var(--soft);padding:14px}
+.technical-portfolio figure>a img{height:240px;object-fit:contain;border-radius:8px;background:#fff}
+.technical-portfolio .technical-figure figcaption{display:grid;gap:7px;padding:16px}
+.technical-portfolio figcaption strong{display:block;color:var(--navy);font-size:16px}
+.technical-portfolio figcaption span{display:block;color:var(--muted);font-size:13px;line-height:1.6;font-weight:400}
+.technical-portfolio figcaption a{color:var(--blue);font-weight:800;text-decoration:none}
+.technical-portfolio figure:not(.technical-figure) img{height:240px;object-fit:cover;border-radius:0}
+@media(max-width:760px){.technical-portfolio figure>a img,.technical-portfolio figure:not(.technical-figure) img{height:220px}}
