@@ -39,3 +39,42 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .technical-portfolio figcaption a{color:var(--blue);font-weight:800;text-decoration:none}
 .technical-portfolio figure:not(.technical-figure) img{height:240px;object-fit:cover;border-radius:0}
 @media(max-width:760px){.technical-portfolio figure>a img,.technical-portfolio figure:not(.technical-figure) img{height:220px}}
+
+
+/* REDESIGN 2026 — visual mais forte, comercial e responsivo */
+:root{--navy:#071827;--navy2:#0c263b;--blue:#087fbe;--cyan:#39d0e3;--ink:#142333;--muted:#647789;--line:#dce6ed;--soft:#f2f7fa;--green:#12834a}
+body{font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;letter-spacing:-.01em}
+.topbar{padding:15px max(6vw,24px);background:rgba(7,24,39,.97);border-bottom:1px solid rgba(255,255,255,.1);color:#fff;box-shadow:0 8px 28px rgba(7,24,39,.08)}
+.brand{color:#fff;letter-spacing:.1em;font-size:15px}.brand span{color:var(--cyan)}
+nav{gap:clamp(9px,1.2vw,18px)}nav a{color:#d3e0e9;font-size:12px;font-weight:750;transition:color .2s}nav a:hover{color:var(--cyan)}.nav-cta{background:var(--cyan);color:#061a29!important;border-radius:7px;padding:11px 14px}.nav-cta:hover{background:#fff;color:var(--navy)!important}
+.menu{color:#fff}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:630px;grid-template-columns:1.1fr .9fr;padding:86px max(7vw,28px);background:radial-gradient(ellipse at 82% 42%,rgba(18,126,183,.23),transparent 36%),linear-gradient(120deg,#071827 0%,#0b263b 60%,#10334a 100%);color:#fff}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(90deg,transparent,#000)}
+.hero .eyebrow,.b2b .eyebrow,.quote .eyebrow{color:var(--cyan)}
+.hero h1{max-width:780px;color:#fff;font-size:clamp(43px,5.5vw,72px);line-height:1.01;letter-spacing:-.055em}
+.hero-lead{max-width:640px;color:#c2d2de;font-size:17px;line-height:1.75}
+.hero .btn.primary{background:var(--cyan);color:#061a29}.hero .btn.primary:hover{background:#fff}.hero .btn.secondary{background:transparent;border-color:#527186;color:#fff}.hero .btn.secondary:hover{border-color:var(--cyan);color:var(--cyan)}
+.trust-row{color:#d3e2ec;gap:12px}.trust-row span{padding:8px 11px;border:1px solid rgba(255,255,255,.14);border-radius:7px;background:rgba(255,255,255,.04);font-size:12px}
+.hero-visual{min-height:440px}.visual-glow{width:400px;height:400px;background:radial-gradient(circle,rgba(57,208,227,.2),rgba(57,208,227,0) 70%)}
+.rack-visual{border-color:#233b4e;box-shadow:22px 28px 70px rgba(0,0,0,.4);transform:perspective(900px) rotateY(-7deg);transition:transform .35s}.rack-visual:hover{transform:perspective(900px) rotateY(0)}
+.visual-label{border-color:rgba(57,208,227,.35);background:#102d42;color:#dffaff;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+.promo{padding:23px max(7vw,28px);background:var(--cyan);color:#071827}.promo span{color:#17495c}.promo p{color:#245366}.promo .btn.light{border:1px solid rgba(7,24,39,.18);background:#071827;color:#fff}.promo .btn.light:hover{background:#fff;color:#071827}
+.section{padding-top:82px;padding-bottom:82px}.section-heading{margin-bottom:34px}.section-heading h2{font-size:clamp(30px,3.8vw,47px);letter-spacing:-.045em}.section-heading>p:last-child{font-size:16px;max-width:760px}
+.problem-card,.service-card,.plan-card,.global-card,.deliverable-card,.steps article{border-radius:12px;box-shadow:0 4px 18px rgba(7,24,39,.035);transition:transform .2s,border-color .2s,box-shadow .2s}.problem-card:hover,.steps article:hover{transform:translateY(-3px);border-color:#b4d6e6;box-shadow:0 14px 30px rgba(7,24,39,.07)}
+.problem-card{padding:25px}.problem-card>span,.service-card>span{color:var(--blue)}.problem-card h3{margin-top:24px}
+.service-card{padding:15px 15px 22px;border-radius:12px}.service-card img{height:205px;border-radius:8px;margin-bottom:17px}.service-card h3{font-size:19px}.service-card a{display:inline-flex;align-items:center;gap:6px}.service-card a:hover{text-decoration:underline}
+.lead-path-card{padding:26px}.lead-path-card .btn{font-size:12px}
+.soft{background:#f2f7fa}
+.plan-card{padding:28px}.plan-card.featured{border:2px solid var(--blue);box-shadow:0 18px 42px rgba(8,127,190,.12);transform:translateY(-5px)}.plan-card h3{font-size:36px}.recommended{background:var(--blue);border-radius:5px}.plan-card .btn{border-radius:7px}
+.b2b{background:linear-gradient(120deg,#071827,#0c2a40)}.b2b-list span{border-radius:8px}
+.global{background:#edf5f8}
+.quote{background:linear-gradient(120deg,#071827,#0b2a40)}#quoteForm{border-radius:13px;box-shadow:0 22px 60px rgba(0,0,0,.16)}
+input,select,textarea{border-radius:7px}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(8,127,190,.1);outline:0}
+.btn{border-radius:7px;transition:transform .18s,background .18s,border-color .18s}.btn:hover{transform:translateY(-1px)}
+.deliverable-footer{border-radius:12px}.technical-portfolio figure{border-radius:12px}.technical-portfolio figure>a{padding:12px}
+footer{background:#071827;border-top:1px solid #183448;color:#b8c9d6}footer strong{color:#fff}footer a{color:var(--cyan)}
+.whatsapp-float{background:#12834a;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+@media(max-width:1050px){.topbar{gap:15px}nav{gap:8px}nav a{font-size:11px}.hero{gap:3vw}}
+@media(max-width:800px){.topbar{background:#071827}.menu{color:#fff}nav{top:62px;background:#071827;border-bottom:1px solid #254256;box-shadow:0 15px 25px rgba(0,0,0,.2)}nav a{font-size:14px;color:#e1edf4;padding:10px}.hero{padding:62px 24px 46px;grid-template-columns:1fr}.hero-copy{max-width:760px}.hero-visual{min-height:330px}.plan-card.featured{transform:none}.section{padding-top:65px;padding-bottom:65px}.promo{gap:14px}}
+@media(max-width:560px){.hero h1{font-size:clamp(39px,11.5vw,54px)}.hero-lead{font-size:16px}.hero-visual{min-height:270px}.rack-visual{width:195px;height:260px}.visual-glow{width:280px;height:280px}.trust-row span{font-size:11px}.promo strong{font-size:19px}.section-heading h2{font-size:32px}.service-card img{height:190px}.plan-card{padding:23px}.technical-portfolio figure>a img,.technical-portfolio figure:not(.technical-figure) img{height:205px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
