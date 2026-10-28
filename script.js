@@ -47,7 +47,7 @@ if(form&&statusEl){
       const response=await fetch("https://api.emailjs.com/api/v1.0/email/send",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados),signal:controller.signal});
       clearTimeout(timeout);
       if(!response.ok)throw new Error("HTTP "+response.status);
-      statusEl.textContent="Solicitação enviada com sucesso! Protocolo "+protocol+". Vamos analisar o escopo e entrar em contato. Se não receber retorno, fale conosco pelo WhatsApp.";
+      statusEl.textContent="Solicitação enviada com sucesso! Protocolo "+protocol+". Vamos analisar o escopo e entrar em contato. Se não receber retorno, fale conosco pelo WhatsApp."; statusEl.setAttribute("tabindex","-1"); statusEl.focus({preventScroll:false});
       form.reset();
     }catch(error){
       clearTimeout(timeout);
