@@ -102,3 +102,16 @@ footer{background:#071827;border-top:1px solid #183448;color:#b8c9d6}footer stro
 .hire-cta p strong{color:var(--navy)}
 @media(max-width:900px){.hire-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hire-method-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.hire-service-grid{grid-template-columns:1fr}.hire-methods{padding:22px}.hire-cta{align-items:stretch;flex-direction:column}.hire-cta .btn{width:100%;text-align:center}}
+
+
+/* Melhorias de acessibilidade, contato e formulário — 27/10/2026 */
+:focus-visible{outline:3px solid #18a7c9;outline-offset:3px}
+a,button,input,select,textarea{transition:color .18s ease,border-color .18s ease,background-color .18s ease,box-shadow .18s ease}
+button:disabled{opacity:.65;cursor:wait}
+.status{min-height:1.5em;padding-top:6px;font-weight:700}
+.status:empty{display:none}
+.international-notice{border:1px solid var(--line);border-radius:12px;background:#f2f8fb;padding:18px;margin:14px 0}
+.international-notice p{margin:8px 0 14px;color:var(--muted)}
+.hp-field{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.service-card img,.portfolio-grid img{background:#eaf0f5}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
