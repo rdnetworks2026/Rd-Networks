@@ -26,6 +26,7 @@ if(form&&statusEl){
     if(button)button.disabled=true;
     statusEl.textContent="Enviando solicitação...";
     const get=name=>form.elements[name]?.value?.trim()||"";
+    if(get("website")){statusEl.textContent="Não foi possível processar a solicitação. Entre em contato pelo WhatsApp.";if(button)button.disabled=false;return;}
     const selected=form.querySelector('input[name="request_type"]:checked')?.value||"";
     const protocol="RD-"+new Date().toISOString().replace(/\D/g,"").slice(0,14);
     const dados={
@@ -46,7 +47,7 @@ if(form&&statusEl){
       const response=await fetch("https://api.emailjs.com/api/v1.0/email/send",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados),signal:controller.signal});
       clearTimeout(timeout);
       if(!response.ok)throw new Error("HTTP "+response.status);
-      statusEl.textContent="Solicitação enviada com sucesso! Protocolo "+protocol+". Vamos analisar o escopo e entrar em contato.";
+      statusEl.textContent="Solicitação enviada com sucesso! Protocolo "+protocol+". Vamos analisar o escopo e entrar em contato. Se não receber retorno, fale conosco pelo WhatsApp.";
       form.reset();
     }catch(error){
       clearTimeout(timeout);
