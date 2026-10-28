@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/</loc></url>
-  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/cabeamento-estruturado.html</loc></url>
-  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/organizacao-de-rack.html</loc></url>
-  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/documentacao-de-redes.html</loc></url>
-  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/instalacoes-eletricas.html</loc></url>
-  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/cftv-ip.html</loc></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/index-es.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/global.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/b2b.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/cabeamento-estruturado.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/organizacao-de-rack.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/documentacao-de-redes.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/instalacoes-eletricas.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/cftv-ip.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://rdnetworks2026.github.io/Rd-Networks/exemplo-documentacao.html</loc><lastmod>2026-10-27</lastmod></url>
 </urlset>
