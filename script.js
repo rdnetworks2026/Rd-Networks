@@ -26,45 +26,45 @@ if(form&&statusEl){
     if(button)button.disabled=true;
     statusEl.textContent="Enviando solicitação...";
     const get=name=>form.elements[name]?.value?.trim()||"";
-    if(get("website")){statusEl.textContent="Não foi possível processar a solicitação. Entre em contato pelo WhatsApp.";if(button)button.disabled=false;return;}
-    const selected=form.querySelector('input[name="request_type"]:checked')?.value||"";
+    if(get("website")){
+      statusEl.textContent="Não foi possível processar a solicitação. Entre em contato pelo WhatsApp.";
+      if(button)button.disabled=false;
+      return;
+    }
     const protocol="RD-"+new Date().toISOString().replace(/\D/g,"").slice(0,14);
     const dados={
       service_id:EMAILJS_SERVICE_ID,
       template_id:EMAILJS_TEMPLATE_ID,
       user_id:EMAILJS_PUBLIC_KEY,
       template_params:{
-        name:get("name"),email:get("email"),whatsapp:get("phone"),client_type:get("client_type"),
-        country:get("country"),city:get("city"),neighborhood:"",cnpj:"",contact_preference:"WhatsApp e/ou e-mail",
-        service:get("service"),request_type:selected,quantity:get("quantity"),urgency:get("urgency"),
-        preferred_time:"A combinar",materials:get("materials"),existing_rack:"",first_service:"",
-        has_files:get("has_files"),message:get("message"),protocol
+        name:get("name"),company:get("company"),email:get("email"),whatsapp:get("phone"),
+        client_type:"Empresa",country:get("country"),city:get("city"),neighborhood:"",
+        cnpj:"",contact_preference:"WhatsApp e/ou e-mail",service:"Solicitação de serviço",
+        request_type:"Orçamento / consulta",quantity:"",urgency:"",preferred_time:"",
+        materials:"",existing_rack:"",first_service:"",has_files:"",message:get("message"),protocol
       }
     };
     const controller=new AbortController();
     const timeout=setTimeout(()=>controller.abort(),15000);
     try{
-      const response=await fetch("https://api.emailjs.com/api/v1.0/email/send",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados),signal:controller.signal});
+      const response=await fetch("https://api.emailjs.com/api/v1.0/email/send",{
+        method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(dados),signal:controller.signal
+      });
       clearTimeout(timeout);
       if(!response.ok)throw new Error("HTTP "+response.status);
-      statusEl.textContent="Solicitação enviada com sucesso! Protocolo "+protocol+". Vamos analisar o escopo e entrar em contato. Se não receber retorno, fale conosco pelo WhatsApp."; statusEl.setAttribute("tabindex","-1"); statusEl.focus({preventScroll:false});
+      statusEl.textContent="Solicitação enviada com sucesso! Protocolo "+protocol+". Vamos analisar as informações e entrar em contato.";
+      statusEl.setAttribute("tabindex","-1");
+      statusEl.focus({preventScroll:false});
       form.reset();
     }catch(error){
       clearTimeout(timeout);
       console.error(error);
-      statusEl.textContent=error.name==="AbortError"?"O envio demorou mais que o esperado. Tente novamente ou fale pelo WhatsApp.":"Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.";
-    }finally{if(button)button.disabled=false;}
+      statusEl.textContent=error.name==="AbortError"
+        ?"O envio demorou mais que o esperado. Tente novamente ou fale pelo WhatsApp."
+        :"Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.";
+    }finally{
+      if(button)button.disabled=false;
+    }
   });
 }
-const countrySelect=document.getElementById("quoteCountry");
-const internationalNotice=document.getElementById("internationalNotice");
-const requestTypeInputs=document.querySelectorAll('input[name="request_type"]');
-function updateInternationalNotice(){
-  if(!countrySelect||!internationalNotice)return;
-  const international=countrySelect.value!=="Brasil";
-  const selectedType=document.querySelector('input[name="request_type"]:checked')?.value||"";
-  internationalNotice.hidden=!(international||selectedType==="Online / Global");
-}
-if(countrySelect)countrySelect.addEventListener("change",updateInternationalNotice);
-requestTypeInputs.forEach(input=>input.addEventListener("change",updateInternationalNotice));
-updateInternationalNotice();
