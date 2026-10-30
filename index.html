@@ -236,37 +236,22 @@
   <div class="quote-intro"><p class="eyebrow">ORÇAMENTO</p><h2 id="quote-title">Explique o que você precisa.</h2><p>Envie os dados básicos. Depois analisamos o escopo e retornamos com a proposta adequada.</p><div class="quote-process"><span><b>01</b> Necessidade</span><span><b>02</b> Análise</span><span><b>03</b> Proposta</span><span><b>04</b> Execução</span></div><p class="muted">Se tiver fotos, plantas ou imagens do rack, você poderá enviá-las pelo WhatsApp.</p></div>
   <form id="quoteForm" aria-label="Solicitação de orçamento">
     <div class="hp-field" aria-hidden="true"><label>Não preencher este campo<input name="website" tabindex="-1" autocomplete="off"></label></div>
-    <div class="request-types">
-      <label class="request-type"><input type="radio" name="request_type" value="Serviço avulso" required><span><b>Serviço avulso</b><small>Uma execução específica</small></span></label>
-      <label class="request-type"><input type="radio" name="request_type" value="Projeto ou serviço sob orçamento"><span><b>Projeto ou serviço</b><small>Orçamento personalizado</small></span></label>
-      <label class="request-type"><input type="radio" name="request_type" value="Apoio B2B"><span><b>Apoio B2B</b><small>Execução para empresa de TI</small></span></label>
-      <label class="request-type"><input type="radio" name="request_type" value="Online / Global"><span><b>Online / Global</b><small>Documentação ou projeto</small></span></label>
+    <div class="two">
+      <label>Nome da empresa<input name="company" required autocomplete="organization" placeholder="Nome da empresa"></label>
+      <label>Nome do contato<input name="name" required autocomplete="name" placeholder="Pessoa responsável"></label>
     </div>
     <div class="two">
-      <label>Nome / empresa<input name="name" required autocomplete="name" placeholder="Seu nome ou empresa"></label>
-      <label>E-mail<input type="email" name="email" required autocomplete="email" placeholder="voce@empresa.com"></label>
+      <label>E-mail corporativo<input type="email" name="email" required autocomplete="email" placeholder="voce@empresa.com"></label>
+      <label>WhatsApp / telefone<input name="phone" autocomplete="tel" placeholder="+55 (27) 99999-9999"></label>
     </div>
     <div class="two">
-      <label>WhatsApp<input name="phone" required autocomplete="tel" placeholder="(27) 99999-9999"></label>
-      <label>País<select name="country" id="quoteCountry" required><option value="Brasil" selected>Brasil</option><option value="México">México</option><option value="El Salvador">El Salvador</option><option value="Argentina">Argentina</option><option value="Chile">Chile</option><option value="Colômbia">Colômbia</option><option value="Peru">Peru</option><option value="Uruguai">Uruguai</option><option value="Paraguai">Paraguai</option><option value="Espanha">Espanha</option><option value="Portugal">Portugal</option><option value="Outro país">Outro país</option></select></label>
+      <label>País<select name="country" id="quoteCountry" required>
+        <option value="Brasil" selected>Brasil</option><option value="Argentina">Argentina</option><option value="Bolívia">Bolívia</option><option value="Chile">Chile</option><option value="Colômbia">Colômbia</option><option value="Costa Rica">Costa Rica</option><option value="Honduras">Honduras</option><option value="México">México</option><option value="Paraguai">Paraguai</option><option value="Peru">Peru</option><option value="Portugal">Portugal</option><option value="Espanha">Espanha</option><option value="Uruguai">Uruguai</option><option value="Outro país">Outro país</option>
+      </select></label>
+      <label>Região / cidade<input name="city" required placeholder="Ex.: Vitória / ES"></label>
     </div>
-    <div class="two">
-      <label>Cidade / região<input name="city" required placeholder="Ex.: Vitória / ES ou Cidade do México"></label>
-      <label>Tipo de cliente<select name="client_type" required><option value="">Selecione</option><option>Empresa</option><option>Empresa de TI / Integrador</option><option>Residencial</option><option>Outro</option></select></label>
-      <label>Serviço principal<select name="service" required><option value="">Selecione</option><option>Cabeamento estruturado</option><option>Organização de rack</option><option>Instalação de rack</option><option>Patch panel / RJ45</option><option>CFTV IP</option><option>Lançamento de fibra óptica (sem fusão)</option><option>Pequenas adequações elétricas simples para TI</option><option>Mudança / remanejamento de infraestrutura</option><option>Implantação em nova unidade</option><option>Documentação de redes</option><option>Projeto de rack online</option><option>Atendimento fora do horário comercial</option><option>Outro</option></select></label>
-    </div>
-    <div class="two">
-      <label>Quantidade aproximada<input name="quantity" placeholder="Ex.: 20 pontos / 8 câmeras / 1 rack"></label>
-      <label>Prazo desejado<select name="urgency"><option value="">Selecione</option><option>Sem urgência</option><option>Até 30 dias</option><option>Até 15 dias</option><option>O quanto antes</option></select></label>
-    </div>
-    <label>Descreva a necessidade<textarea name="message" required rows="6" placeholder="Conte o que precisa ser feito, onde fica e qualquer detalhe que ajude na análise."></textarea></label>
-    <div class="two">
-      <label>Materiais<input name="materials" placeholder="Já possui / precisa de orientação / não sei"></label>
-      <label>Já possui fotos ou medidas?<select name="has_files"><option value="">Selecione</option><option>Sim</option><option>Não</option><option>Parcialmente</option></select></label>
-    </div>
-    <div id="internationalNotice" class="international-notice" hidden><strong>Atendimento internacional sob consulta.</strong><p>As propostas internacionais são personalizadas. Informe o país, o escopo e as informações do projeto para avaliarmos a viabilidade.</p><a class="btn secondary" href="mailto:rdnetworks2026@gmail.com?subject=Consulta%20internacional%20-%20RD%20Networks">Consultar por e-mail</a></div>
-    <label class="consent"><input type="checkbox" name="consent" required> Autorizo o uso destes dados para contato e elaboração da proposta solicitada.</label>
-    <div class="quote-actions"><button class="btn primary" type="submit">Enviar solicitação →</button><a class="btn secondary" href="https://wa.me/5527992551513?text=Ol%C3%A1%2C%20vim%20pelo%20formul%C3%A1rio%20da%20RD%20Networks%20e%20quero%20enviar fotos ou explicar o projeto." target="_blank" rel="noopener noreferrer">Enviar fotos pelo WhatsApp</a></div>
+    <label>Descrição do serviço<textarea name="message" required rows="5" placeholder="Conte brevemente o que sua empresa precisa, o local e os detalhes importantes do serviço."></textarea></label>
+    <div class="quote-actions"><button class="btn primary" type="submit">Enviar solicitação →</button></div>
     <p id="formStatus" class="status" role="status" aria-live="polite"></p>
   </form>
 </section>
