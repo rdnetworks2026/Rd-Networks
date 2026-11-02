@@ -1,0 +1,76 @@
+name: Publicar fotos do portfólio
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rd_networks_portfolio_fotos.zip'
+      - '.github/workflows/extract-portfolio.yml'
+permissions:
+  contents: write
+jobs:
+  extract-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+      - name: Extrair fotos e atualizar galeria
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import shutil, re, html
+          archive = Path('rd_networks_portfolio_fotos.zip')
+          if not archive.exists():
+              raise SystemExit('Arquivo ZIP do portfólio não encontrado.')
+          assets = Path('assets')
+          assets.mkdir(exist_ok=True)
+          extensions = {'.jpg', '.jpeg', '.png', '.webp'}
+          added = []
+          with ZipFile(archive) as z:
+              for info in z.infolist():
+                  if info.is_dir():
+                      continue
+                  src_name = Path(info.filename)
+                  if src_name.suffix.lower() not in extensions:
+                      continue
+                  name = re.sub(r'[^a-zA-Z0-9._-]+', '-', src_name.name).strip('-')
+                  if not name:
+                      continue
+                  dest = assets / ('portfolio-' + name)
+                  with z.open(info) as src, dest.open('wb') as out:
+                      shutil.copyfileobj(src, out)
+                  added.append(dest.name)
+          if not added:
+              raise SystemExit('O ZIP não contém imagens JPG, PNG ou WEBP.')
+          index = Path('index.html')
+          content = index.read_text(encoding='utf-8')
+          start = '<!-- RD-PORTFOLIO-REAL-START -->'
+          end = '<!-- RD-PORTFOLIO-REAL-END -->'
+          if start in content and end in content:
+              a = content.index(start)
+              b = content.index(end, a) + len(end)
+              content = content[:a] + content[b:]
+          cards = []
+          for i, filename in enumerate(added, 1):
+              title = Path(filename).stem.replace('portfolio-', '').replace('_', ' ').replace('-', ' ')
+              title = re.sub(r'\s+', ' ', title).strip().capitalize()
+              safe = html.escape(filename, quote=True)
+              label = html.escape(title)
+              cards.append(f'<figure><img src="assets/{safe}" alt="Registro real de infraestrutura de redes: {label}" loading="lazy" decoding="async"><figcaption><strong>{label or "Trabalho de infraestrutura"}</strong><span>Registro de trabalho realizado pela RD Networks.</span><span class="photo-note-caption">Foto real · portfólio RD Networks</span></figcaption></figure>')
+          section = '\n<section class="section" id="portfolio-fotos-reais"><div class="section-heading"><p class="eyebrow">REGISTROS DE CAMPO</p><h2>Fotos reais de trabalhos e infraestrutura.</h2><p>Imagens do portfólio da RD Networks, organizadas para apresentar atividades e instalações realizadas.</p></div><div class="portfolio-grid real-work-gallery">\n' + '\n'.join(cards) + '\n</div></section>\n'
+          section = start + section + end
+          content = content.replace('</main>', section + '\n</main>', 1)
+          index.write_text(content, encoding='utf-8')
+          print('Imagens publicadas:', ', '.join(added))
+          PY
+      - name: Publicar alterações
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets index.html
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração nova para publicar."
+            exit 0
+          fi
+          git commit -m "Publica fotos reais do portfólio"
+          git push
