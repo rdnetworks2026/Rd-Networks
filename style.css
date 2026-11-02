@@ -274,3 +274,81 @@ hr,.divider{border-color:var(--line)!important}
  .whatsapp-float{right:14px!important;bottom:14px!important}
 }
 @media(prefers-reduced-motion:reduce){.hero-visual .rack-visual{animation:none!important}}
+
+
+/* GALERIA RD NETWORKS — destaque para as oito fotos reais */
+#portfolio .section-heading{max-width:900px;margin-bottom:30px}
+#portfolio .section-heading h2{max-width:780px}
+#portfolio .real-work-gallery{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+#portfolio .real-work-gallery figure{
+  min-width:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  border:1px solid rgba(87,190,235,.25);
+  border-radius:13px;
+  background:linear-gradient(150deg,#102b42,#071827);
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+#portfolio .real-work-gallery figure:hover{
+  transform:translateY(-5px);
+  border-color:rgba(67,211,255,.72);
+  box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 24px rgba(20,173,232,.12);
+}
+#portfolio .real-work-gallery figure img{
+  display:block;
+  width:100%;
+  height:230px;
+  padding:9px;
+  object-fit:contain;
+  object-position:center;
+  background:linear-gradient(145deg,#061421,#0b2032);
+  border-radius:0;
+}
+#portfolio .real-work-gallery figcaption{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  padding:15px 16px 17px;
+}
+#portfolio .real-work-gallery figcaption strong{
+  color:#f1f9ff!important;
+  font-size:15px;
+  line-height:1.35;
+}
+#portfolio .real-work-gallery figcaption span{
+  color:#afc5d7!important;
+  font-size:12px;
+  font-weight:450;
+  line-height:1.55;
+}
+#portfolio .real-work-gallery figcaption .photo-note-caption{
+  margin-top:auto;
+  padding-top:8px;
+  color:#55d9ff!important;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+@media(max-width:1050px){
+  #portfolio .real-work-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  #portfolio .real-work-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #portfolio .real-work-gallery figure img{height:190px}
+}
+@media(max-width:480px){
+  #portfolio .real-work-gallery{grid-template-columns:1fr}
+  #portfolio .real-work-gallery figure img{height:230px}
+}
+@media(prefers-reduced-motion:reduce){
+  #portfolio .real-work-gallery figure{transition:none}
+}
