@@ -352,3 +352,42 @@ hr,.divider{border-color:var(--line)!important}
 @media(prefers-reduced-motion:reduce){
   #portfolio .real-work-gallery figure{transition:none}
 }
+
+
+/* PRESENTACIÓN COMERCIAL Y FOTOGRAFÍAS REALES — noviembre 2026 */
+#servicos .service-card img{
+  display:block;
+  width:100%;
+  height:220px;
+  aspect-ratio:16/10;
+  object-fit:contain;
+  object-position:center;
+  padding:8px;
+  background:linear-gradient(145deg,#061421,#102b42);
+  border:1px solid rgba(87,190,235,.24);
+  border-radius:10px;
+  margin-bottom:14px;
+}
+#servicos .service-card .photo-note{
+  display:block;
+  margin:0 0 8px;
+  color:#5edcff!important;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+#servicos .service-card h3{font-size:19px;line-height:1.3}
+#servicos .service-card p{font-size:13px;line-height:1.65}
+#servicos .service-card .muted{font-size:12px;opacity:.9}
+#servicos .service-card-text{justify-content:center}
+#servicos .lead-path-note{max-width:920px;margin:24px auto 0;line-height:1.7}
+#portfolio .real-work-gallery figure img{object-fit:contain;object-position:center;background:#061421}
+#portfolio .real-work-gallery figure{min-height:100%}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #39cfff;outline-offset:3px}
+@media(max-width:760px){
+  #servicos .service-card img{height:190px}
+}
+@media(max-width:480px){
+  #servicos .service-card img{height:220px}
+}
