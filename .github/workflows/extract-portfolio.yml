@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'rd_networks_portfolio_fotos.zip'
+      - 'rd-networks-fotos-reais.zip'
       - '.github/workflows/extract-portfolio.yml'
 permissions:
   contents: write
@@ -19,7 +19,7 @@ jobs:
           from pathlib import Path
           from zipfile import ZipFile
           import shutil, re, html
-          archive = Path('rd_networks_portfolio_fotos.zip')
+          archive = Path('rd-networks-fotos-reais.zip')
           if not archive.exists():
               raise SystemExit('Arquivo ZIP do portfólio não encontrado.')
           assets = Path('assets')
