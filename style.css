@@ -410,6 +410,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 
 /* VIDEO DE APRESENTAÇÃO — RD NETWORKS */
+.video-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  width:min(100%,900px);
+  margin:0 auto;
+  align-items:start;
+}
+.video-item{min-width:0}
+.video-item .video-frame{width:100%;max-height:none}
+@media(max-width:680px){
+  .video-gallery{grid-template-columns:1fr;max-width:430px;gap:28px}
+}
+
 .video-section .section-heading{margin-bottom:26px}
 .video-frame{
   position:relative;
