@@ -502,3 +502,43 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     border-color:rgba(101,221,255,.75)!important;
   }
 }
+
+
+/* CONTRASTE DAS CAIXAS “SERVIÇOS RELACIONADOS” NAS PÁGINAS DE SERVIÇO */
+.detail-more{
+  background:linear-gradient(180deg,rgba(11,31,50,.98),rgba(6,17,30,.98))!important;
+  border-top:1px solid rgba(82,180,225,.2);
+  border-bottom:1px solid rgba(82,180,225,.2);
+}
+.detail-more .eyebrow{color:#65ddff!important}
+.detail-more h2{
+  color:#f2f9ff!important;
+  font-size:clamp(28px,3.3vw,40px)!important;
+  line-height:1.16!important;
+}
+.detail-more .detail-links a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:76px;
+  padding:20px 22px;
+  color:#f0f8ff!important;
+  background:linear-gradient(145deg,#123650,#0a2033)!important;
+  border:1px solid rgba(100,194,235,.42)!important;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  line-height:1.45;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.detail-more .detail-links a span{color:#65ddff!important;flex:0 0 auto}
+.detail-more .detail-links a:hover,
+.detail-more .detail-links a:focus-visible{
+  color:#ffffff!important;
+  background:linear-gradient(145deg,#174967,#0d2c44)!important;
+  border-color:#65ddff!important;
+  transform:translateY(-2px);
+}
+@media(max-width:800px){
+  .detail-more .detail-links{grid-template-columns:1fr!important}
+  .detail-more .detail-links a{min-height:64px;padding:17px 18px}
+}
