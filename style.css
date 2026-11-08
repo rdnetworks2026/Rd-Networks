@@ -616,3 +616,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   #video .video-item{padding:10px}
   #video .video-frame{max-width:100%}
 }
+
+
+/* Planos corporativos: quatro formatos de contratação no bloco inicial */
+#contratar .hire-method-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+#contratar .hire-method-grid article a{display:inline-block;margin-top:8px;color:var(--cyan);font-size:12px;font-weight:850;text-decoration:none}
+@media(max-width:900px){#contratar .hire-method-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){#contratar .hire-method-grid{grid-template-columns:1fr}}
