@@ -683,3 +683,24 @@ footer{padding-top:25px!important;padding-bottom:25px!important}
   #servicos .service-card img{height:190px}
   #portfolio .real-work-gallery figure img{height:210px}
 }
+
+/* Apresentação compacta do fundador na página inicial */
+.founder-section{padding-top:48px;padding-bottom:52px}
+.founder-section .section-heading{margin-bottom:20px}
+.founder-card{display:grid;grid-template-columns:180px minmax(0,1fr);gap:25px;align-items:center;width:min(100%,850px);margin:0 auto;padding:22px;border:1px solid rgba(76,197,244,.3);border-radius:16px;background:linear-gradient(145deg,rgba(13,45,68,.9),rgba(3,15,27,.96))}
+.founder-photo-wrap{width:180px;aspect-ratio:1/1;overflow:hidden;border-radius:14px;border:1px solid rgba(105,223,255,.4);background:#0b2033}
+.founder-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.founder-role{margin:0 0 6px;color:#65ddff;font-size:10px;font-weight:900;letter-spacing:.13em}
+.founder-info h3{margin:0 0 9px;color:#f5fbff;font-size:25px}
+.founder-summary,.founder-experience{color:#c5d7e6;line-height:1.6;font-size:13px}
+.founder-credentials{display:grid;gap:5px;margin:12px 0;padding-left:18px;color:#c5d7e6;font-size:12px;line-height:1.5}
+.founder-credentials li::marker{color:#65ddff}
+.founder-experience{margin:10px 0;padding-top:10px;border-top:1px solid rgba(104,190,231,.22)}
+.founder-experience strong{color:#f5fbff}
+.founder-link{display:inline-block;color:#72e2ff;font-size:13px;font-weight:800;text-decoration:none}
+.founder-link:hover{text-decoration:underline}
+@media(max-width:620px){
+ .founder-card{grid-template-columns:1fr;gap:16px;padding:18px}
+ .founder-photo-wrap{width:150px;margin:0 auto}
+ .founder-info h3{font-size:22px}
+}
