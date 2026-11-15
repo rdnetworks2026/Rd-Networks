@@ -704,3 +704,11 @@ footer{padding-top:25px!important;padding-bottom:25px!important}
  .founder-photo-wrap{width:150px;margin:0 auto}
  .founder-info h3{font-size:22px}
 }
+
+/* Vídeo demonstrativo de patch panel */
+.patch-video-section .section-heading>p:last-child{max-width:620px;margin:10px auto 0;color:var(--muted,#b9cad8);line-height:1.6}
+.patch-video-frame{width:min(100%,760px);margin:0 auto;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(76,197,244,.3);border-radius:16px;background:#061321;box-shadow:0 16px 42px rgba(0,0,0,.24)}
+.patch-video-frame iframe{display:block;width:100%;height:100%;border:0}
+.patch-video-cta{margin:18px 0 0;text-align:center}
+.patch-video-cta a{color:#72e2ff;font-weight:800;text-decoration:none}
+.patch-video-cta a:hover{text-decoration:underline}
