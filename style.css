@@ -623,3 +623,34 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 #contratar .hire-method-grid article a{display:inline-block;margin-top:8px;color:var(--cyan);font-size:12px;font-weight:850;text-decoration:none}
 @media(max-width:900px){#contratar .hire-method-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){#contratar .hire-method-grid{grid-template-columns:1fr}}
+
+
+/* SEÇÃO DO FUNDADOR — final da página inicial */
+.founder-section{padding-top:76px;padding-bottom:86px}
+.founder-heading{max-width:760px;margin:0 auto 30px;text-align:center}
+.founder-heading h2{color:var(--text-high,#f1f8ff)}
+.founder-heading>p:last-child{color:var(--text-mid,#d0e0ed)}
+.founder-card{
+  display:grid;grid-template-columns:minmax(220px,320px) minmax(0,1fr);gap:clamp(26px,5vw,54px);
+  align-items:center;width:min(100%,980px);margin:0 auto;padding:clamp(22px,4vw,42px);
+  border:1px solid rgba(76,197,244,.3);border-radius:22px;
+  background:linear-gradient(145deg,rgba(13,45,68,.9),rgba(3,15,27,.96));
+  box-shadow:0 18px 55px rgba(0,0,0,.28)
+}
+.founder-photo-wrap{overflow:hidden;aspect-ratio:1/1;border-radius:18px;border:1px solid rgba(105,223,255,.4);background:#0b2033}
+.founder-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.founder-role{margin:0 0 8px;color:#65ddff;font-size:11px;font-weight:900;letter-spacing:.16em}
+.founder-info h3{margin:0 0 12px;color:#f5fbff;font-size:clamp(25px,3vw,34px);line-height:1.15}
+.founder-summary,.founder-experience{color:#c5d7e6;line-height:1.7}
+.founder-info h4{margin:22px 0 10px;color:#f5fbff;font-size:16px}
+.founder-credentials{display:grid;gap:9px;margin:0;padding-left:20px;color:#c5d7e6;line-height:1.55}
+.founder-credentials li::marker{color:#65ddff}
+.founder-experience{margin:20px 0 14px;padding-top:16px;border-top:1px solid rgba(104,190,231,.22)}
+.founder-experience strong{color:#f5fbff}
+.founder-link{display:inline-block;color:#72e2ff;font-weight:800;text-decoration:none}
+.founder-link:hover{text-decoration:underline}
+@media(max-width:680px){
+  .founder-section{padding-top:58px;padding-bottom:64px}
+  .founder-card{grid-template-columns:1fr;gap:22px;padding:20px}
+  .founder-photo-wrap{width:min(100%,260px);margin:0 auto}
+}
