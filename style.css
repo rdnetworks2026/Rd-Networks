@@ -654,3 +654,32 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .founder-card{grid-template-columns:1fr;gap:22px;padding:20px}
   .founder-photo-wrap{width:min(100%,260px);margin:0 auto}
 }
+
+
+/* HOME SIMPLES — leitura rápida e foco em contato */
+.hero{min-height:0;padding-top:76px;padding-bottom:68px}
+.section{padding-top:58px;padding-bottom:58px}
+.section-heading{margin-bottom:26px}
+#servicos .card-grid.services{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#servicos .service-card{padding:16px!important}
+#servicos .service-card img{height:170px;margin-bottom:10px}
+#servicos .service-card h3{font-size:17px;margin:8px 0}
+#servicos .service-card p{font-size:13px;line-height:1.55}
+#portfolio .real-work-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#portfolio .real-work-gallery figure img{height:185px}
+#portfolio .real-work-gallery figcaption{padding:12px 14px}
+#portfolio .real-work-gallery figcaption span{font-size:12px}
+#atendimento .section-heading{max-width:760px;margin-inline:auto;text-align:center}
+#orcamento{padding-top:58px;padding-bottom:58px}
+footer{padding-top:25px!important;padding-bottom:25px!important}
+@media(max-width:900px){
+  #servicos .card-grid.services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #portfolio .real-work-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .hero{padding-top:48px;padding-bottom:42px}
+  .section{padding-top:44px;padding-bottom:44px}
+  #servicos .card-grid.services,#portfolio .real-work-gallery{grid-template-columns:1fr}
+  #servicos .service-card img{height:190px}
+  #portfolio .real-work-gallery figure img{height:210px}
+}
