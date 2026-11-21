@@ -50,3 +50,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .faq-list details p{margin:0;padding:0 0 17px;color:var(--muted);font-size:13px;line-height:1.75}
 @media(max-width:950px){.solutions-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.process-list{grid-template-columns:1fr}.process-list li{min-height:110px}}
 @media(max-width:760px){.solutions-grid{grid-template-columns:1fr}.solution-card{min-height:0}.differentials-grid{grid-template-columns:1fr}.differentials-grid article{padding:18px}.faq-list details{padding:0 16px}}
+
+
+/* Galeria fotográfica — apresentação editorial e responsiva */
+.hero-photo{display:block;min-height:390px;overflow:hidden;border:1px solid #d5e1e8;background:#102b43;box-shadow:0 22px 55px rgba(16,43,67,.14)}
+.hero-photo>img{display:block;width:100%;height:100%;min-height:390px;max-height:510px;object-fit:cover;object-position:center 42%;filter:saturate(.94)}
+.hero-photo-caption{position:absolute;left:0;right:0;bottom:0;display:grid;gap:5px;padding:48px 25px 23px;background:linear-gradient(0deg,rgba(7,24,39,.92),rgba(7,24,39,0));color:#fff}
+.hero-photo-caption span{color:#8de0f1;font-size:10px;font-weight:900;letter-spacing:.18em}
+.hero-photo-caption strong{max-width:390px;font-size:clamp(17px,2vw,23px);line-height:1.2}
+.real-work-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.real-work-gallery figure{overflow:hidden;border:1px solid #dfe7ec;border-radius:7px;box-shadow:0 5px 18px rgba(16,43,67,.045);transition:transform .22s ease,box-shadow .22s ease}
+.real-work-gallery figure:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(16,43,67,.13)}
+.real-work-gallery img{height:auto;aspect-ratio:4/3;object-fit:cover;padding:0;background:#e9eff3;transition:transform .35s ease}
+.real-work-gallery figure:hover img{transform:scale(1.035)}
+.real-work-gallery figcaption{min-height:105px;padding:17px 18px 19px;background:#fff}
+.real-work-gallery figcaption strong{font-size:15px;line-height:1.35}
+.real-work-gallery figcaption span{display:block;line-height:1.6}
+.service-card img{object-fit:cover;border-radius:4px}
+@media(max-width:950px){.real-work-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.hero-photo,.hero-photo>img{min-height:270px}.real-work-gallery{grid-template-columns:1fr}.real-work-gallery img{aspect-ratio:16/10}.real-work-gallery figcaption{min-height:0}}
