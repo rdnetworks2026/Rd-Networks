@@ -55,7 +55,15 @@ h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:12px}
 .steps span{color:var(--muted);font-size:15.5px}
 .contact{background:var(--navy);color:#fff;text-align:center}
 .contact p{color:#cfe0f7;max-width:32em;margin:0 auto 28px}
-.contact .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.contact .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.contact-actions{margin-top:8px}
+.contact .contact-btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-width:230px;min-height:54px;padding:15px 25px;border-radius:12px;font-size:16px;font-weight:800;letter-spacing:.01em;box-shadow:0 8px 22px rgba(0,0,0,.18);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.contact .contact-btn span{font-size:20px;line-height:1}
+.contact .whatsapp-btn{background:#20b85a;color:#fff!important;border:2px solid #20b85a}
+.contact .email-btn{background:#fff;color:#14336b!important;border:2px solid #fff}
+.contact .contact-btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.25)}
+.contact .contact-btn:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+@media (max-width:540px){.contact .contact-btn{width:100%;max-width:340px}}
 footer{padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
 .video{max-width:900px;margin:38px auto 0}.video h3{text-align:center;margin:0 0 16px;font-size:21px}.video-frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--line)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:860px){
@@ -174,7 +182,7 @@ nav a:not(.btn){display:none}
 <section id="contato" class="contact"><div class="wrap">
 <h2>Vamos organizar a sua rede?</h2>
 <p>Conte o que você precisa e receba um orçamento da RD Networks.</p>
-<div class="cta"><a class="btn" href="https://wa.me/5527992551513">Chamar no WhatsApp</a><a class="btn alt" href="mailto:rdnetworks2026@gmail.com">Enviar e-mail</a></div>
+<div class="cta contact-actions"><a class="btn contact-btn whatsapp-btn" href="https://wa.me/5527992551513" aria-label="Conversar com a RD Networks pelo WhatsApp"><span aria-hidden="true">◉</span> Falar pelo WhatsApp</a><a class="btn contact-btn email-btn" href="mailto:rdnetworks2026@gmail.com" aria-label="Enviar e-mail para a RD Networks"><span aria-hidden="true">✉</span> Enviar e-mail</a></div>
 </div></section>
 </main>
 <footer>© 2026 RD Networks. Todos os direitos reservados.<br>CNPJ: 69.318.238/0001-66</footer>
